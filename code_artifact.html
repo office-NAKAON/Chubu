@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北陸地方の雪と人々の暮らし・産業</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f8fafc; /* Tailwind slate-50 */
+        }
+        .card-hover {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased p-4 md:p-8 lg:p-12">
+
+    <header class="max-w-5xl mx-auto mb-10 text-center">
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">北陸地方の雪と人々の暮らし・産業</h1>
+        <p class="text-slate-600">雪は生活の負担になる一方で、地域の産業を支える大切な役割を果たしています。</p>
+    </header>
+
+    <main class="max-w-5xl mx-auto space-y-8">
+        
+        <!-- 切り替えボタン -->
+        <div class="flex flex-wrap justify-center gap-4 mb-4">
+            <button id="btn-winter" class="px-6 py-3 rounded-full font-bold transition-all duration-200 bg-blue-500 text-white shadow-md hover:bg-blue-600">
+                <i class="fa-solid fa-snowflake mr-2"></i>雪が積もっているとき（冬）
+            </button>
+            <button id="btn-spring" class="px-6 py-3 rounded-full font-bold transition-all duration-200 bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 shadow-sm">
+                <i class="fa-solid fa-water mr-2"></i>雪がとけたとき・ないとき（春〜秋）
+            </button>
+        </div>
+        
+        <div class="max-w-3xl mx-auto">
+            
+            <!-- 雪が積もっているとき（冬）セクション -->
+            <section id="section-winter" class="bg-white rounded-2xl shadow-sm border-t-4 border-blue-400 p-6 md:p-8 card-hover">
+                <div class="flex items-center mb-6 border-b border-slate-100 pb-4">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-500 rounded-full flex items-center justify-center text-2xl mr-4 shrink-0">
+                        <i class="fa-solid fa-snowflake"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-blue-900">雪が積もっているとき<br><span class="text-lg font-medium text-blue-600">（冬）</span></h2>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- 暮らし -->
+                    <div>
+                        <h3 class="font-bold text-slate-700 flex items-center mb-2"><i class="fa-solid fa-house-chimney text-slate-400 w-6"></i>暮らしの負担</h3>
+                        <p class="text-sm text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                            屋根の雪おろしや道路の雪かきが必要。
+                        </p>
+                    </div>
+
+                    <!-- 農業 -->
+                    <div>
+                        <h3 class="font-bold text-slate-700 flex items-center mb-2"><i class="fa-solid fa-tractor text-slate-400 w-6"></i>冬の農業</h3>
+                        <p class="text-sm text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                            農作業ができないため、米づくりは年に1回の<b>単作</b>で行われる。
+                        </p>
+                    </div>
+
+                    <!-- 産業 -->
+                    <div>
+                        <h3 class="font-bold text-slate-700 flex items-center mb-2"><i class="fa-solid fa-hammer text-slate-400 w-6"></i>地場産業への発展</h3>
+                        <div class="text-sm text-slate-600 bg-blue-50 p-4 rounded-lg border border-blue-100 space-y-3">
+                            <p>冬の農閑期に屋内でできる<b>副業（織物、漆器、金物など）</b>が、現在の地場産業の土台となりました。</p>
+                            <ul class="list-disc list-inside space-y-1 ml-1">
+                                <li><b>新潟県 燕市・三条市周辺：</b><br>
+                                    江戸時代のくぎづくりから発達。<br>洋食器、アウトドア用品、自動車部品など。</li>
+                                <li><b>福井県 鯖江市：</b><br>
+                                    農家の内職から始まった眼鏡枠（フレーム）づくり。中小企業が工程を分担。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- 雪がとけたとき、雪がないとき（春～秋）セクション -->
+            <section id="section-spring" class="bg-white rounded-2xl shadow-sm border-t-4 border-emerald-400 p-6 md:p-8 card-hover hidden">
+                <div class="flex items-center mb-6 border-b border-slate-100 pb-4">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-500 rounded-full flex items-center justify-center text-2xl mr-4 shrink-0">
+                        <i class="fa-solid fa-water"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-emerald-900">雪がとけたとき・ないとき<br><span class="text-lg font-medium text-emerald-600">（春〜秋）</span></h2>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- 農業 -->
+                    <div>
+                        <h3 class="font-bold text-slate-700 flex items-center mb-2"><i class="fa-solid fa-wheat-awn text-slate-400 w-6"></i>雪どけ水と稲作</h3>
+                        <div class="text-sm text-slate-600 bg-emerald-50 p-4 rounded-lg border border-emerald-100 space-y-2">
+                            <p>春の豊富な<b>雪どけ水</b>を利用し、越後平野は日本有数の稲作地帯になりました。</p>
+                            <p class="text-xs text-slate-500">※かつては洪水に悩まされましたが、江戸時代から排水路や干拓が進められました。</p>
+                            <ul class="list-disc list-inside ml-1">
+                                <li><b>コシヒカリ：</b>北陸で開発された品種。</li>
+                                <li><b>銘柄米：</b>「魚沼産コシヒカリ」など。</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 工業（食品） -->
+                    <div>
+                        <h3 class="font-bold text-slate-700 flex items-center mb-2"><i class="fa-solid fa-bowl-rice text-slate-400 w-6"></i>食品工業</h3>
+                        <p class="text-sm text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                            収穫された米を原料とした米菓やもち、日本酒などをつくる工業が発達。
+                        </p>
+                    </div>
+
+                    <!-- 工業（水力・金属） -->
+                    <div>
+                        <h3 class="font-bold text-slate-700 flex items-center mb-2"><i class="fa-solid fa-bolt text-slate-400 w-6"></i>エネルギーと工業</h3>
+                        <div class="text-sm text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-100 space-y-2">
+                            <p>豊富な雪どけ水は<b>水力発電</b>や<b>工業用水</b>に利用されます。</p>
+                            <ul class="list-disc list-inside ml-1">
+                                <li><b>富山県：</b>水力発電による大量の電力・水と、高岡市の銅器の技術が結びつき、<b>アルミニウムの製造・加工</b>（サッシなど）が盛ん。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <script>
+        // DOM要素の取得
+        const btnWinter = document.getElementById('btn-winter');
+        const btnSpring = document.getElementById('btn-spring');
+        const sectionWinter = document.getElementById('section-winter');
+        const sectionSpring = document.getElementById('section-spring');
+
+        // ボタンのスタイル定義（Tailwindクラス）
+        const winterActive = ['bg-blue-500', 'text-white', 'shadow-md', 'hover:bg-blue-600'];
+        const winterInactive = ['bg-white', 'text-slate-600', 'border', 'border-slate-200', 'hover:bg-slate-50', 'shadow-sm'];
+        
+        const springActive = ['bg-emerald-500', 'text-white', 'shadow-md', 'hover:bg-emerald-600'];
+        const springInactive = ['bg-white', 'text-slate-600', 'border', 'border-slate-200', 'hover:bg-slate-50', 'shadow-sm'];
+
+        // 冬ボタンクリック時
+        btnWinter.addEventListener('click', () => {
+            // 表示の切り替え
+            sectionWinter.classList.remove('hidden');
+            sectionSpring.classList.add('hidden');
+
+            // ボタンデザインの切り替え
+            btnWinter.classList.remove(...winterInactive);
+            btnWinter.classList.add(...winterActive);
+            
+            btnSpring.classList.remove(...springActive);
+            btnSpring.classList.add(...springInactive);
+        });
+
+        // 春〜秋ボタンクリック時
+        btnSpring.addEventListener('click', () => {
+            // 表示の切り替え
+            sectionSpring.classList.remove('hidden');
+            sectionWinter.classList.add('hidden');
+
+            // ボタンデザインの切り替え
+            btnSpring.classList.remove(...springInactive);
+            btnSpring.classList.add(...springActive);
+            
+            btnWinter.classList.remove(...winterActive);
+            btnWinter.classList.add(...winterInactive);
+        });
+    </script>
+</body>
+</html>
